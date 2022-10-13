@@ -28,7 +28,7 @@ print(rok(a,b,c))
 #zad 4
 def fun(imie,nazwisko,foo):
     return foo(imie,nazwisko)
-print(fun("kamil","jarzyski",foo))
+print(fun("Jakub","Krajewski",foo))
  
  
 #zad 5
@@ -73,13 +73,13 @@ print(list)
  
 #zad 9
 def dobry(a):
-    dobry={1: "Fajniedziałek",
-           2: "Ftorek",
-           3: "srodaaaa;/",
-           4: "czwartek",
-           5: "piatek",
-           6: "sobota",
-           7: "nedzielnika"}
+    dobry={1: "Poniedziałek",
+           2: "Wtorek",
+           3: "Sroda;/",
+           4: "Czwartek",
+           5: "Piatek",
+           6: "Sobota",
+           7: "Niedziela"}
     return dobry[a]
 print(dobry(3))
  
