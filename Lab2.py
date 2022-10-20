@@ -129,3 +129,45 @@ list_.Print()
 list_.Remove(1)
 list_.Print()
 print(list_.Len())
+
+
+from typing import Any
+
+class Node:
+    value: Any
+    next: 'Node'
+    def __init__(self, value: Any)->None:
+        self.value=value
+
+class LinkedList:
+    head: Node
+    tail: Node
+    def __init__(self)->None:
+        self.head = None
+        self.tail = None
+        
+    def push(self,element: Any)->None:
+        node = Node(element)
+        if self.head is None:
+            self.head = node
+            self.tail = node
+        else:
+            node.next = self.tail
+            self.head = node
+
+    def append(self,element):
+        lastnode = Node(element)
+        lastnode.next = None
+        self.tail = lastnode
+
+    def len(self):
+        node=self.head
+        len=0
+
+        while node is not None:
+            len=len+1
+            node=node.next
+        return len
+
+    def remove_last(self):
+        element = self.tai
