@@ -71,3 +71,60 @@ list_.print()
 list_.remove(1)
 list_.print()
 print(list_.len())
+#LIFO
+
+class Node:
+    def __init__(self, value=None, next=None):
+        self.value=value
+        self.next=next
+
+class Stack:
+    def __init__(self,top=None):
+        self._storage=top
+        self.size=0
+
+    def push(self, element:any):
+        node=Node(element)
+
+        if self._storage is None:
+            self._storage=node
+            self.size = self.size + 1
+            return
+
+        temp=self._storage
+        self._storage=node
+        node.next=temp
+        self.size=self.size+1
+
+    def pop(self):
+        if self._storage is None:
+            print("nie mozna pop, stack jest pusty")
+            return
+
+        value=self._storage
+
+        self._storage=self._storage.next
+        self.size = self.size - 1
+
+        return value
+
+    def __len__(self):
+        return self.size
+
+    def print(self):
+        node = self._storage
+
+        while node is not None:
+            print(node.value)
+            node = node.next
+
+
+stack=Stack()
+stack.push(10)
+stack.push(11)
+stack.push(12)
+stack.print()
+print("-------------")
+stack.pop()
+stack.print()
+print(len(stack))
