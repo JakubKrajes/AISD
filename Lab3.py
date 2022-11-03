@@ -7,7 +7,7 @@ def fib(n: int) -> int:
 print(fib(10))
 
 
-def power(number: int, n: int) -> int:
+def power(number: int, n: int)-> int:
     if n <= 0:
         return 1
     return(number*power(number,n-1))
@@ -15,7 +15,7 @@ def power(number: int, n: int) -> int:
 print(power(2, 6))
 
 
-def reverse(txt: str)->str:
+def reverse(txt: str)-> str:
     if len(txt) == 0:
         return txt
     else:
@@ -23,13 +23,13 @@ def reverse(txt: str)->str:
 
 print(reverse("pies"))
 
-def factorial(n:int)->int:
+def factorial(n:int)- >int:
     if n==1 or n==0:
         return 1
 
     return n*factorial(n-1)
 
-def prime(n:int, i=2):
+def prime(n:int, i=2)-> bool:
     if n==i:
         return True
 
@@ -38,7 +38,7 @@ def prime(n:int, i=2):
 
     return prime(n,i=i+1)
     
-def remove_duplicates(txt:str)->str:
+def remove_duplicates(txt:str)-> str:
     if len(txt) == 1:
         return txt
     
