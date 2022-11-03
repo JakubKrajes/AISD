@@ -22,3 +22,27 @@ def reverse(txt: str)->str:
         return reverse(txt[1:]) + txt[0]
 
 print(reverse("pies"))
+
+def factorial(n:int)->int:
+    if n==1 or n==0:
+        return 1
+
+    return n*factorial(n-1)
+
+def prime(n:int, i=2):
+    if n==i:
+        return True
+
+    if n%i==0:
+        return False
+
+    return prime(n,i=i+1)
+    
+def remove_duplicates(txt:str)->str:
+    if len(txt) == 1:
+        return txt
+    
+    if txt[0] == txt[1]:
+        return remove_duplicates(txt[1:])
+    
+    return txt[0] + remove_duplicates(txt[1:])
