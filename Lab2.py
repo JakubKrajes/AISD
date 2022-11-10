@@ -163,3 +163,40 @@ print("-------------")
 stack.pop()
 stack.print()
 print(len(stack))
+class Queue:
+    _storage: LinkedList
+
+    def __init__(self):
+        self._storage = LinkedList()
+
+    def peek(self):
+        return self._storage.node(0)  # looks at "head", so node 0
+
+    def enqueue(self, element: Any) -> None:
+        self._storage.append(element)  # appends the element
+
+    def dequeue(self) -> Any:
+        return self._storage.pop()  # pops the queue
+
+    def __len__(self):
+        return len(self._storage)
+
+    def __str__(self):
+        return str(self._storage).replace(" -> ", ", ")  # replaces str from linked list
+
+
+queue = Queue()
+
+assert len(queue) == 0
+
+queue.enqueue('klient1')
+queue.enqueue('klient2')
+queue.enqueue('klient3')
+
+assert str(queue) == 'klient1, klient2, klient3'
+
+client_first = queue.dequeue()
+
+assert client_first == 'klient1'
+assert str(queue) == 'klient2, klient3'
+assert len(queue) == 2
