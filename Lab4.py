@@ -34,10 +34,8 @@ class BinarySearchTree:
     def _insert(self, node: BinaryNode, value: Any) -> BinaryNode:
         if node is None:
             return BinaryNode(value)
-
         if value < node.value:
             node.left_child = self._insert(node.left_child, value)
-
         if value >= node.value:
             node.right_child = self._insert(node.right_child, value)
 
